@@ -1,3 +1,12 @@
+# Coming soon
+
+   - Webhook support
+   - Discord integration
+   - Discord bot support
+   - Public IP address support
+   
+
+
 # CollectorX
 This Node.js script collects information about your system, including CPU and memory usage, operating system details, baseboard information, disk layout, public IP address, and GeoIP location data.
 
