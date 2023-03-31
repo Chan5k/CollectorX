@@ -3,7 +3,6 @@ https://www.virustotal.com/gui/file/c6cf65417cf9b0df6ed039c4f4df4bd6413e7021b5a4
 
 # Coming soon
 
-   - Webhook support
    - Discord integration
    - Discord bot support
    - Public IP address support
