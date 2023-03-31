@@ -1,5 +1,6 @@
 # Virus Total Detection
-https://www.virustotal.com/gui/file/c6cf65417cf9b0df6ed039c4f4df4bd6413e7021b5a48e15e7f12ef9cd1d1955/detection
+https://www.virustotal.com/gui/file/4b5745318e85925855ff9316c052c547edb0930b28be7a87de3158cbb0df6498/detection
+   (Compiled EXE)
 
 # Coming soon
 
