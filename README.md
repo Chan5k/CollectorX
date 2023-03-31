@@ -35,6 +35,12 @@ This Node.js script collects information about your system, including CPU and me
  - Compile it (Optional, using PKG)
         
        pkg en.js --output yourappname.exe
+       
+# Structure
+
+         
+![image](https://user-images.githubusercontent.com/87248999/229108361-cf6c82cd-e93d-4485-be80-ee4fba0f0e0c.png)
+
         
 # Output
 
