@@ -33,6 +33,10 @@ This Node.js script collects information about your system, including CPU and me
  - Wait for the script to collect system information and save it to a JSON file named `system_info.json`.
         Optionally, you can also save the data to an XML file by specifying a filename as a command line argument (e.g., `npm start my_systemOI_Example Outputinfo.json`).
         
+ - Compile it (Optional, using PKG)
+        
+       pkg en.js --output yourappname.exe
+        
 # Output
 
 ![image](https://user-images.githubusercontent.com/87248999/229049755-c1216fd7-57d3-4e4c-b820-a3fd5145b5e6.png)
