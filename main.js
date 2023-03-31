@@ -10,17 +10,33 @@ const { collectDrivesInfo } = require('./utils/collectDrivesInfo');
 const { lookupPublicIp } = require('./utils/lookupPublicIp');
 const { lookupGeoip } = require('./utils/lookupGeoip');
 const { saveInfoToFile } = require('./utils/saveInfoToFile');
-const { collectNetworkInterfaces } = require('./utils/collectNetworkInterfaces'); // Import the new function
+const { collectGpuInfo } = require('./utils/collectGpuInfo');
+const { collectFileSystemInfo } = require('./utils/collectFileSystemInfo');
+const { collectUserInfo } = require('./utils/collectUserInfo');
+const { collectAllSoftwareInfo } = require('./utils/collectAllSoftwareInfo');
 
 (async () => {
   console.log('Collecting system information...');
-  const [cpuInfo, memoryInfo, osInfo, baseboardInfo, drivesInfo, networkInterfaces] = await Promise.all([
+  const [
+    cpuInfo,
+    memoryInfo,
+    osInfo,
+    baseboardInfo,
+    drivesInfo,
+    gpuInfo,
+    fileSystemInfo,
+    userInfo,
+    allSoftwareInfo,
+  ] = await Promise.all([
     collectCpuInfo(),
     collectMemoryInfo(),
     collectOsInfo(),
     collectBaseboardInfo(),
     collectDrivesInfo(),
-    collectNetworkInterfaces(), // Call the new function
+    collectGpuInfo(),
+    collectFileSystemInfo(),
+    collectUserInfo(),
+    collectAllSoftwareInfo(),
   ]);
 
   const publicIp = await lookupPublicIp();
@@ -32,9 +48,12 @@ const { collectNetworkInterfaces } = require('./utils/collectNetworkInterfaces')
     ...osInfo,
     ...baseboardInfo,
     ...drivesInfo,
-    publicIp,
+    ...gpuInfo,
+    ...fileSystemInfo,
+    ...userInfo,
+    ...allSoftwareInfo,
     geoip,
-    ...networkInterfaces, // Add the network interfaces information to the systemInfo object
+    publicIp, // Include the public IP in the output
   };
 
   console.log('System information collected.');
