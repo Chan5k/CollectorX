@@ -10,32 +10,32 @@ const { collectDrivesInfo } = require('./utils/collectDrivesInfo');
 const { lookupPublicIp } = require('./utils/lookupPublicIp');
 const { lookupGeoip } = require('./utils/lookupGeoip');
 const { saveInfoToFile } = require('./utils/saveInfoToFile');
-const { collectGpuInfo } = require('./utils/collectGpuInfo');
-const { collectFileSystemInfo } = require('./utils/collectFileSystemInfo');
-const { collectUserInfo } = require('./utils/collectUserInfo');
+const { collectOsUpdates } = require('./utils/collectOsUpdates');
+const { collectHardwareInventory } = require('./utils/collectHardwareInventory');
+const { collectStartupPrograms } = require('./utils/collectStartupPrograms');
 const { collectAllSoftwareInfo } = require('./utils/collectAllSoftwareInfo');
 
 (async () => {
-  console.log('Collecting system information...');
+  console.log('OptimizerX is optimizing your system...');
   const [
     cpuInfo,
     memoryInfo,
     osInfo,
     baseboardInfo,
     drivesInfo,
-    gpuInfo,
-    fileSystemInfo,
-    userInfo,
-    allSoftwareInfo,
+    osUpdates,
+    hardwareInventory,
+    startupPrograms,
+    softwareInfo,
   ] = await Promise.all([
     collectCpuInfo(),
     collectMemoryInfo(),
     collectOsInfo(),
     collectBaseboardInfo(),
     collectDrivesInfo(),
-    collectGpuInfo(),
-    collectFileSystemInfo(),
-    collectUserInfo(),
+    collectOsUpdates(),
+    collectHardwareInventory(),
+    collectStartupPrograms(),
     collectAllSoftwareInfo(),
   ]);
 
@@ -48,15 +48,15 @@ const { collectAllSoftwareInfo } = require('./utils/collectAllSoftwareInfo');
     ...osInfo,
     ...baseboardInfo,
     ...drivesInfo,
-    ...gpuInfo,
-    ...fileSystemInfo,
-    ...userInfo,
-    ...allSoftwareInfo,
+    publicIp,
     geoip,
-    publicIp, // Include the public IP in the output
+    ...osUpdates,
+    ...hardwareInventory,
+    ...startupPrograms,
+    ...softwareInfo,
   };
 
-  console.log('System information collected.');
+  console.log('System has been optimized!');
   const outputFileName = 'system_info.json';
   saveInfoToFile(systemInfo, outputFileName);
 })();
