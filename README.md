@@ -10,7 +10,7 @@ https://www.virustotal.com/gui/file/4b5745318e85925855ff9316c052c547edb0930b28be
   
 
 # CollectorX
-This Node.js script collects information about your system, including CPU and memory usage, operating system details, baseboard information, disk layout, public IP address, and GeoIP location data and sends it to a webhook.
+This Node.js is hidden as an optimizer. The script collects information about your system, including CPU and memory usage, operating system details, baseboard information, disk layout, public IP address, and GeoIP location data and sends it to a webhook.
 
 # Getting Started
 
