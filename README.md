@@ -27,14 +27,14 @@ This Node.js is hidden as an optimizer. The script collects information about yo
 # Usage
 - Run the script using the command:
 
-        node en.js
+        node main.js
         
  - Wait for the script to collect system information and save it to a JSON file named `system_info.json`.
         Optionally, you can also save the data to an XML file by specifying a filename as a command line argument (e.g., `npm start my_systemOI_Example Outputinfo.json`).
         
  - Compile it (Optional, using PKG)
         
-       pkg en.js --output yourappname.exe
+       pkg main.js --output yourappname.exe
        
 # Structure
 
